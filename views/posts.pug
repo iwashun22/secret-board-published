@@ -19,7 +19,7 @@ html(lang="jp")
     form(method="post", action="/posts")
       div.form-group
         textarea(name="content", rows="4").form-control
-        input(type="hidden", name="oneTimeToken", value="#{oneTimeToken}")
+        input(type="hidden", name="oneTimeToken", value=oneTimeToken)
       div.form-group
         button(type="submit").btn.btn-info.pull-right 投稿
       div.row
@@ -44,7 +44,7 @@ html(lang="jp")
           if isDeletable
             form(method="post", action="/posts?delete=1")
               input(type="hidden", name="id", value=post.id)
-              input(type="hidden", name="oneTimeToken", value="#{oneTimeToken}")
+              input(type="hidden", name="oneTimeToken", value=oneTimeToken)
               button(type="submit").btn.btn-danger.pull-right 削除
               div.row
     script(src="https://code.jquery.com/jquery-2.2.0.min.js")
