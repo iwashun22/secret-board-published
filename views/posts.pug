@@ -27,11 +27,11 @@ html(lang="jp")
              span #{post.id} : 管理人 ★
             else
               - var originalTrackingId = post.trackingCookie ? post.trackingCookie.split('_')[0] : ''
-              span #{post.id} : ID:#{originalTrackingId}
+              span #{post.id} : ID:#{originalTrackingId}  
         div.card-body
-          p(style="white-space:pre;").card-text #{post.content}
+          p(style="white-space:pre; overflow:auto;") #{post.content}
         div.card-footer
-            div 投稿日時: #{post.createdAt}
+            div 投稿日時: #{post.formattedCreatedAt}
             - var isAdmin = (user === 'admin')
             if isAdmin
               div 投稿者: #{post.postedBy}
